@@ -21,3 +21,11 @@ app.get("/users", (req, res) => {
   ];
   res.json(users);
 });
+
+app.use(express.json());
+
+app.post("/users", (req, res) => {
+  const newUser = req.body;
+  console.log(newUser);
+  res.json({ message: "User added successfully!", user: newUser });
+});
